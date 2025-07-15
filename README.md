@@ -67,17 +67,6 @@ L'avaluació dels estats es basa en la distància mínima calculada mitjançant 
     }
 ```
 
-## 📊 Comparativa de Jugadors
-
-| Característica          | Profunditat Fixa             | IDS amb Timeout             |
-|-------------------------|------------------------------|-----------------------------|
-| **Simplicitat**         | ✅ Senzill                   | ❌ Complex                  |
-| **Control de temps**    | ❌ Limitada                  | ⚠️ Teòricament millor      |
-| **Qualitat moviments**  | ✅ Acceptable                | ❌ Deficient                |
-| **Profunditat assolida**| ✅ 3-5 nivells               | ❌ 1 nivell (en proves)     |
-| **Nodes explorats**     | ⚠️ 130K (mitjana)           | ❌ 478K (excessiu)          |
-| **Temps execució**      | ✅ 4s (nivell 3)             | ❌ 10s (sense aprofitar)    |
-
 ## ⚠️ Limitacions i Problemes Coneguts
 
 1. **Implementació IDS defectuosa**:
@@ -95,30 +84,11 @@ L'avaluació dels estats es basa en la distància mínima calculada mitjançant 
    - ❌ Creixement exponencial de nodes explorats
    - ❌ Falta de taules de transposició per a memòria
 
-## 🧩 Estructura del Codi
-
-```java
-// Implementació bàsica de Minimax amb poda Alfa-Beta
-private int[] minimax(HexGameStatus estat, int profunditat, int alpha, int beta, boolean esMaximitzant, int nodesExplorats) {
-    // Implementació recursiva
-    // ...
-}
-
-// Funció d'avaluació basada en Dijkstra
-private int avaluar(HexGameStatus estat, int profunditat) {
-    int distJugador = Dijkstra.calcularDistancia(estat, _el_meu_player);
-    int distOponent = Dijkstra.calcularDistancia(estat, PlayerType.opposite(_el_meu_player));
-    return distOponent - distJugador;
-}
-```
-
 ## 📌 Conclusions
 
 Aquest projecte representa un intent d'implementar un jugador intel·ligent per a HEX utilitzant algorismes avançats. Malgrat això:
 
-- La versió amb **profunditat fixa funciona acceptablement** però amb limitacions
 - La implementació d'**IDS no és viable** en el seu estat actual
-- L'ús de **Dijkstra com a heurística és prometedor** però requereix millores
 - Es necessitaria més temps per afegir tècniques com ponts i millorar l'avaluació
 
 ## 👥 Autors
@@ -126,4 +96,4 @@ Aquest projecte representa un intent d'implementar un jugador intel·ligent per 
 - **Alex Matilla Santos**
 - **Pau Ortiz Borrás**
 
-Projecte desenvolupat com a part de l'assignatura de **Programació i Tecnologia Informàtica**.
+Projecte desenvolupat com a part de l'assignatura de **Projecte de programació**.
